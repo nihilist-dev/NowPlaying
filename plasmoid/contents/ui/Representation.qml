@@ -7,6 +7,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 RowLayout {
     id: fullView
     focus: true
+    visible: mediaSource.loaded ? true : false
     Keys.onReleased: {
         if (!event.modifiers) {
             event.accepted = true
@@ -77,7 +78,7 @@ RowLayout {
                     id: playButton
                     contentItem: PlasmaCore.IconItem {
                         source: mediaSource.playbackStatus
-                                === "Playing" ? "media-playback-start" : "media-playback-pause"
+                                === "Paused" ? "media-playback-start" : "media-playback-pause"
                     }
                     padding: 0
                     background: null
